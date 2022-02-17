@@ -278,3 +278,117 @@ at each step the search algorythm chhooses one leaf node to excpand:
 1. they have not been expanded
 2. expanded but not the correct way
 
+## Uninformed search
+### Backtracking
+> systematic move foreward and not coming back
+> 
+> - starts at initial and end at particular solution
+> - there is no solution at any time
+> 
+> ![backtrack algo](https://www.w3.org/2011/Talks/01-14-steven-phenotype/backtracking.png)
+> 
+> but how will machine implement it?
+> 
+> ![backtrack idea](https://github.com/gabboraron/artificial_intelligence-intelligent_agents_paradigm/blob/main/backtrack_search.jpg)
+
+### Classification of Search strategies
+![goal vs data driven search](https://slideplayer.com/slide/13956099/86/images/62/Strategies+for+State+Space+Search.jpg)
+
+there are cases where data driven is better then goal driver, and vice versa
+
+### data driven
+like above
+### goal driven:
+- search strarts from the goal, applies operators that could produce the goal, and chains backward to given facts of the problem
+- searching backward means generating
+- is better when there is more branching factor
+
+### informed search
+problem specific knowledge is used, so we have to know the problem
+
+### uninformed search
+**no** information is available about:
+- the number of steps 
+- the cost
+- how good is the current state
+
+in order which nodes are expended is:
+- breath first search
+- uniform cost search 
+- depth-first search 
+- depth limited search
+- iterative deepening search
+- bidirectional search
+
+> #### breath first search 
+> - this search expands the shallowest node in the search tree first
+> 
+> ![breath first search](https://i.ytimg.com/vi/oDqjPvD54Ss/maxresdefault.jpg) 
+> 
+> ![breath fst](https://github.com/gabboraron/artificial_intelligence-intelligent_agents_paradigm/blob/main/breadt%20fst.jpg)
+> 
+> [YouTube - Breadth First Search Algorithm | Shortest Path | Graph Theory](https://www.youtube.com/watch?v=oDqjPvD54Ss)
+
+> #### uniform cost search
+> - this search expands the lowesst cost node on the frontier first
+> - the path cost must never decrease `g(successor(n)) >= g(n)`
+> 
+> ![uniform search strategy](https://cdn.educba.com/academy/wp-content/uploads/2020/02/Uninformed-Search-4.jpg)
+
+> #### depth-first search
+> works the same way as the backtracking
+
+> #### depth limited search
+> same as depth-first search, but have a maximum trashold what can achive in a direction
+> 
+> ![depth limited](https://github.com/gabboraron/artificial_intelligence-intelligent_agents_paradigm/blob/main/depth%20limited.jpg)
+
+> #### iterative deepening search
+> - has a limit
+> - if fails then increase the limit
+> - each time restart the search algo from the root
+
+> #### bidirectional search
+> iterative deepening search and depth-first from the other direction at the same time
+
+> #### saving path
+> ![](https://github.com/gabboraron/artificial_intelligence-intelligent_agents_paradigm/blob/main/saving%20path.jpg)
+
+### Implementing search algorithms
+two lists are used to implement algo:
+- open: the nodes which we didn't found yet
+- closed: which we already found it
+
+to implement breadth-first and depth-first
+- initially open contains the initial node
+- states are excluded from the left side of the open list
+- new states are included in **the right side** of open in case of breadth first search and in **the left side** in case of depth first search
+- algo terminates when the goal state is either in the first **position of the list open** or is inserted into the list closed
+- states that already are open or closed are not added to the list open
+
+### evaluation of uniformed search strategies
+- completeness - is a solution guaranteed?
+- time complexity - time needed for solution
+- space complexity - memory needed for solution
+- optimality - is highest quality solution quaranteed when there are several different solutions?
+
+| criterion | breadth first |uniform | depth first | dept limited | iterative deepening | bidirectional |
+| ------- | ---- |----- |----|---- |----- |----|
+| complete | + | + |- | + if l>= d | + | +  |
+|time | b^d | b^d | b^m|b^l | b^d |b^(d/2) | 
+|space | b^d | d^b | **bm** | **bl** | b^(d/2) | 
+| optimal | + |+ |-| - | + |+ |
+
+- *b* branching factor (every state can be expanded to yield *b* new states)
+- *d* is the depth of solution
+- *m* is the maximum depth of the search tree
+- *l* is the depth limit
+
+***NEXT TIME TEST***
+1. open zoom
+2. open camera
+3. turn off microphone
+4. open test
+5. take it
+6. send it in MSWord or Pdf
+
