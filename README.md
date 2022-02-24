@@ -392,3 +392,66 @@ to implement breadth-first and depth-first
 5. take it
 6. send it in MSWord or Pdf
 
+## heuristics
+- experience bassed
+- empirically found
+- allows process the most promising branches first
+
+to define heuristics: 
+- **costs**: lower value is better
+- **quality of the node path*: higher values is better
+
+***depend on the domain/state space and not the algorithms/search strategy
+
+### classification of search strategies
+- greedy search - minimizing the estimate cost to real search
+- A*
+- IDA* - iterative deepening A*
+- SMA* search - simpilfied memory bounded A*
+- iterative improvement algorithms
+  - hill climbing
+  - beam search
+  - random restart hill climbing
+  - stochastic hill climbing
+  - simulated annealing
+
+#### Best first search
+- this search expands thew node appears to be the best according to the evaluation fuinction
+#### greedy search 
+https://www.geeksforgeeks.org/greedy-algorithms/
+
+### informed search strategies
+#### A*
+`f(n) = g(x) + h(x)`
+
+#### memory bounded
+condservs memory
+
+#### Aiterative deepening A* - IDA*
+-each iteration is depth first search - modified to use an f-cost
+expands all nodes inside the contour for the current f-cost peeping over the contour to find out where the next contour is, where all nodes have `f(n)` less than or equal to f-cost
+
+#### iterative improvement algorithms
+- this search explores the state space trying to find the best value of estimated cost
+- take to reach the goal very fast and with very low resources
+
+#### beam search
+- breaadth first level by level
+- all nodes from the list OPEN are expeaded
+- expect only the the best weight
+
+*beam* means how many nodes can we store
+
+#### simulated annealing
+- picks a randomly seleted successor of the current node
+- if the move improves the situation always executed
+- probability decrases eponentially with the badness of the move calculated as difference of values between next and current state
+
+#### stochastic hill climbing
+- randomy choses on of sucessors that imprves the quality of the state
+- depends on the improvement
+- **lowest heuristic**: *allwys going to lower value in the graph!*
+- **highest heuristic**: *allwys going to hisgher value in the graph!*
+
+
+
