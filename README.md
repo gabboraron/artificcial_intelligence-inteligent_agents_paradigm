@@ -401,7 +401,7 @@ to define heuristics:
 - **costs**: lower value is better
 - **quality of the node path*: higher values is better
 
-***depend on the domain/state space and not the algorithms/search strategy
+***depend on the domain/state space and not the algorithms/search strategy***
 
 ### classification of search strategies
 - greedy search - minimizing the estimate cost to real search
@@ -417,25 +417,36 @@ to define heuristics:
 
 #### Best first search
 - this search expands thew node appears to be the best according to the evaluation fuinction
+
 #### greedy search 
 https://www.geeksforgeeks.org/greedy-algorithms/
 
+- reduces the time and pace complexity with a good heuristic function
+
 ### informed search strategies
+more in: https://github.com/gabboraron/MI-EA 
 #### A*
 `f(n) = g(x) + h(x)`
 
 #### memory bounded
 condservs memory
 
-#### Aiterative deepening A* - IDA*
+#### iterative deepening A* - IDA*
 -each iteration is depth first search - modified to use an f-cost
 expands all nodes inside the contour for the current f-cost peeping over the contour to find out where the next contour is, where all nodes have `f(n)` less than or equal to f-cost
+- only goes through two or three restarts since typically f only increases several times along the heuristic route
 
 #### iterative improvement algorithms
+- cheap - fast
 - this search explores the state space trying to find the best value of estimated cost
 - take to reach the goal very fast and with very low resources
 
+#### SMA
+more complicated tasks can be handled with this
+
 #### beam search
+- uses only the best W nodes at each level the other nodes are ignored
+- uses lot of memory 
 - breaadth first level by level
 - all nodes from the list OPEN are expeaded
 - expect only the the best weight
@@ -443,15 +454,87 @@ expands all nodes inside the contour for the current f-cost peeping over the con
 *beam* means how many nodes can we store
 
 #### simulated annealing
+- uses local maxima
+- 
 - picks a randomly seleted successor of the current node
 - if the move improves the situation always executed
 - probability decrases eponentially with the badness of the move calculated as difference of values between next and current state
+
+#### hill climbing
+- when we are creating path it should be good all the time
+- if local choices are perfectly then the algo is it too
 
 #### stochastic hill climbing
 - randomy choses on of sucessors that imprves the quality of the state
 - depends on the improvement
 - **lowest heuristic**: *allwys going to lower value in the graph!*
 - **highest heuristic**: *allwys going to hisgher value in the graph!*
+
+### weakness of informed search strategies
+> because heuristics use limited information they can lead a search algorithm to a suboptimal solution or fail to find any solution at all
+> 
+> - **best first**: is not an answer to all searching needs because at the worst case exponentional growt will occur.
+> - **greedy star**: is optimal, finding the shortest path, but in worth case is neither complete
+> - **`A*`**: 
+> - **`IDA*`**: it can expand `N^2` nodes in `N` iteration
+> - **`SMA*`** not complete and not optimal, huge memory usage
+> - **Hill climbing**: will halt even thought the solution may be far from satisfactory
+> 
+> *different use cases needs different algorithms*
+
+### two-player games
+- two player (human or computer)
+- conflict games
+- players use heuristics
+
+like in chess:
+- both players know where the pieces are
+- both know the possible moves
+
+like in card games:
+- players do not know the other's pieces
+
+in each situation  each player has full information:
+- chess
+- tick-tack-toe
+- checkers
+- chess
+
+are not: 
+- poker
+- bridge
+- dice games
+
+#### game tree
+- game trees consists of nodes and arcs
+- nodes represent a possible state of game
+- edges represent a the way how we occure there
+- root node is the starting position
+- internal node
+- leaf nodes are the possible termination places of the game
+- each level in gme tree is a turn of a player
+
+##### Mini-Max algorithm
+- dividing into minimizer and maximizer levels of the game tree
+- the idea is to maxximise your result in the game by minimizing opponents result
+- the algorithm comes down to the leaf nodes and assigns the heuristic values that denote how good the state is for the maximizer
+- the evaluations are transferred upwards
+- heuristic evaluations:
+  - the heuristic evaluations are given as numbers
+  - they characterise how good the state is for the given player
+  - 1 if the maximizer wins
+  - -1 if minimizer wins
+  - 0 if draw
+> **steps of mimiax algorithm**
+> 
+> [javatpoint.com description](https://www.javatpoint.com/mini-max-algorithm-in-ai)
+> 
+> 1. build full gam tree
+> 2. divide the gam tree into the levels (MIN-MAX)
+> 3. assign heuristi evaluations to the leaf nodes
+> 4. transfer the evaluations upwards till the root node
+> 5. 
+
 
 
 
