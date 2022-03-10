@@ -535,6 +535,40 @@ are not:
 > 4. transfer the evaluations upwards till the root node
 > 5. 
 
+## MINIMAX
+- in building the game tree choosing the parameters is the key
+
+## Complex games
+> - it is hard to create the game tree
+> - looking forward by n moves
+> 
+> `F(s) = a*B + b*R+c*M+d*C+e*P+f*A` where
+> - `B` total value of pieces
+> - `R` protection of the king
+> - `M` mobility of the pieces
+> - `C` contorl over the center
+> - `P` pawn structure
+> - ` A` possibel attack
+> - `a;b;c;d;e;f` - weights
+
+## using knowladge
+> what is knowladge?
+> - an individual understanding of given subject
+> - **for us only the *domain specific* knowledge is intersting!**
+> - ***domain* is a well-focused area!**
+> - in general a representation is a set of conventions about how to describe a class of things
+> - a description makes use of the conventions of a represenation to describe some particular thing
+> the function of any representation scheme is to capture essential features of a problem domain => make this available for the machine
+> - the represenation language must allow the programmer to use the knowladgebase 
+
+### wumpus world 
+https://www.javatpoint.com/the-wumpus-world-in-artificial-intelligence
+
+- cave explored by agent consist from rooms connected with passageways
+
+![the cave](https://static.javatpoint.com/tutorial/ai/images/the-wumpus-world-in-artificial-intelligence.png)
+
+-  
 
 
 
