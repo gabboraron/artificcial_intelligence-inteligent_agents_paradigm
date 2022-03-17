@@ -568,7 +568,100 @@ https://www.javatpoint.com/the-wumpus-world-in-artificial-intelligence
 
 ![the cave](https://static.javatpoint.com/tutorial/ai/images/the-wumpus-world-in-artificial-intelligence.png)
 
--  
+### knewledge representation
+**declarative knowledge**
+- concepts
+- facts
+- objects
 
+**procedureal knowledge**: describes how a problem is solved
+- rules
+- strategies
+- agendas
+- procedures
+
+**heuristic knowledge (shallow knowledge)**: describe a rule of thumb that guides the reasoning process; it is empirical and represents the knowledge compiled by an expert throught the experience of solving past problems
+- rules of thumb
+
+**meta knowledge**: describes knowledge about knowledge. This type of knowlede is used to pick other knowledge that is best suited for solving a problem. experts use this type of knowledge to enhance the efficiency of problem solving by directing their reasoning in the most promising area.
+- knowledge about the other types of knowledge and how to use them
+
+**structural knowledge**: describes knowledge structures. this type of knowledge describes an expert's overall mental model of the problem. The expert's mental model of concepts sub-concepts and objects is typical of rhis type of knowledge
+- rule sets 
+- concepts relationships
+- concept to object relationships
+
+> knowledge representation language:
+> 
+> - syntax of the language describes the possible config
+> - semantics determines the facts in the world which the sentences refer
+> 
+> *if yntacs and semantics are defines precisely the language is called logic* 
+> 
+> Sentences => semantics => facts 
+> - *representation must be encoded some way that can be physically stored within an intelligent system*
+> - *it is imposible to put the worlld inside a computer so all reasoning mechanisms must operate on representations of facts, rather than on facts themselves*
+> 
+> representation:
+> - kexical
+> - structural
+> - procedural
+> - semantic
+
+### the role of logic in artificial intelligenc
+***logical formalism suggests a powerful way of deriving new knowledge from olf mathematifal deduction; this conclusion can be made that a new statement is true by proving that it follows from the statements that are already known.***
+- sound
+- complete
+
+
+AI programming requires means of capturing and reasoning about qualitative aspects of a problem
+
+logic provides ai progrmmers with a well-definied language => create automation for us
+
+logical axioms, and "problmes as theorems" representations help us attack a problem
+
+=> AI programming languages: [PROLOG](https://en.wikipedia.org/wiki/Prolog)
+
+- not all problems can be solved with logic
+- some knowledge resits embodiment in axioms
+- logic is weak as a representation for certain kinds of knowledge
+- the notation of pure logic does not allow to express such notations as heuristic distances
+- difficult to develop a system like that
+
+Kinnds of logic:
+- general lang:
+  - propositional calculus
+  - predicate calculus 
+- based on general lang:
+  - temporal 
+  - probability
+  - fuzzy 
+
+### propositional logic
+- symbols: P, Q, R, S, T
+- truth symbols: True, False
+- connectivities: ^; ˇ; =>, ≅, !
+
+where
+- every propositinoal symbo and truth symbol is a sentence
+- negation of a sentance is a sentance
+- conjunction or AND of two sentences is a sentence
+
+
+how to test truth validity:
+- truth table method:
+  - `+` any propositional calculus expression can be tested
+  - `-` time consuming in case of large number of propositions
+- complete proof procedures
+  - `+` can procedure any expression that logically folllows from a set of experiences
+  - inference mechanism <-methods by the conclusion is reached 
+
+
+`a |= b `meaning:`b` can be derived from `a` by inference: `a/b`
+
+- an interfence rule is sound if the conclusion is true, in all cases where the premises are true
+- to prove the soundness the truth table must be constructed with one line for each possible model of the proposition symbols in the premises, in all model where the premise is true, the conclusion must be also true
+
+![proposition calculus truth table](https://leanprover.github.io/logic_and_proof/_static/semantics_of_propositional_logic.4.png)
 
 
