@@ -664,4 +664,26 @@ how to test truth validity:
 
 ![proposition calculus truth table](https://leanprover.github.io/logic_and_proof/_static/semantics_of_propositional_logic.4.png)
 
+## intelligent agents
+### predictive calculus
+```
+B=It rained on Firday
+will it rain on Monday?
+```
+- irreducible syntactic elements
+- symbols may represent constants *tom* represents Tom. **the *true* and *false* are reserved as truth symbols**
+- a fact or proposition is divided into two parts: predicate and argument. The arguments athe object or objecxt of the proposition 
+
+```
+Tom owns the car => owns(tom,car)
+- owns - predicate
+- tom, car - arguments and symbols
+```
+- variables: represent general classes of objects or poperties
+- functions: mapping one or more leemnt of a set (*domain*) to a unique elemnt of another set (*range*)
+  - elements of the domain and range are objects in the world of discourse
+  - every function symbol has an associated *arity* (number od elements in domain which are used in the function)
+- functions can be used within predicates
+- atomic sentences
+
 
