@@ -686,4 +686,82 @@ Tom owns the car => owns(tom,car)
 - functions can be used within predicates
 - atomic sentences
 
+if `x` and `y` is a syntax then `x and y` and `x=>y` and `x or y` and `∀x` and `∃x` is also a syntax.
+- `∀X (cat(X) => animal(X))` means: *All cats are animals*
+- `∀X (likes(X, mary) and nice(mary) => nice(X))` mens: *all instances of X who like Mary, and if Mary is nice, then it is implied that those who like Mary are also nice.*
+- `∀X, Y (parent(X, Y) => child(Y, X))` is *“For all persons, if X is a parent of Y, then Y is a child of X”*
+- `∀X ∃Y loves(X, Y)` means *Everybody loves somebody*
+
+> Predicate calculus semantics provide a formal basis, for determining the truth value of well-formed expressions
+> 
+> The truth of expressions depends on the mapping of constants, variables, predicates, and functions into objects and relations in the domain of discourse
+> 
+> *ex: owns(john, ford); friends(john, bill)*
+
+> Let the domain D be a nonempty set.
+>
+> An interpretation over D is an assignment of the entities of D to each of the constant, variable, predicate and function symbols of a predicate calculus expression
+> - Each constant is assigned an element of D
+> - Each variable is assigned to a nonempty subset of D.
+
+> Each function f of arity m is defined on m arguments of D and defines a mapping from D^m into D
+> 
+> Each predicate p of arity n is defined on n arguments from D and defines a mapping from D^n into {T, F}
+
+> Given an interpretation, the meaning of an expression is a truth value assignment over the interpretation.
+>
+> Let E be an expression and I an interpretation for E over a nonempty domain D. The truth value for E is determined by:
+> 1. The value of constant is the element of D it is assigned to by I
+> 2. The value of a variable is the set of elements of D it is assigned to by I
+> 3. The value of a function expression is that element of D obtained by evaluating the function for the parameter values assigned by the interpretation
+> 4. The value of truth symbol “true” is T and “false” is F
+> 5. The value of an atomic sentence is either T or F, as determined by the interpretation I
+> 6. The value of the negation of a sentence is T if the value of the sentence is F and is F if the value of the sentence is T
+
+> ***If the domain of interpretation is infinite, exhaustive testing of all substitutions to a universally quantified variable is computationally impossible: the algorithm may never halt 
+> 
+> That is why the predicate calculus is said to be undecidable***
+> 
+> - Evaluating the truth value of a sentence containing an existentially quantified variable may not be easier
+> - If the domain of the variable is infinite and the sentence is false under all substitutions, the algorithm will never halt
+
+> In the language defined, universally and existentially quantified variables may refer only to objects (constants) in the domain of discourse
+> 
+> This language is called the first-order logic (first-order predicate calculus)
+> - any natural language may be expressed in first-order logic using the symbols, connectives, and variable symbols
+> 
+> *Example:*
+> - *“All basketball players are tall”.*
+> *Mappings:*
+> - *∀X(basketball_player(X) and tall(X))*
+> - *∀XX(basketball_player(X) => tall(X))*
+
+> - In propositional calculus two expressions match if and only if they are syntactically identical
+> - In predicate calculus a decision process based on universal instantiation is needed for determining the variable substitutions under which two or more expressions can be made identical
+> - Unification is an algorithm for determining the substitutions needed to make two predicate calculus expressions match
+>   - All variables must be universally quantified
+>   - Existentially quantified variables may be eliminated by replacing them with the constants 
+>   - all quantifiers can be dropped
+>   - Skolemization replaces each existentially quantified variable with a function that returns the appropriate constant *ex: `∀X ∃Y father(X,Y)` become `∀X father(X, f(X))`
+>   - Unification is complicated because a variable may be replaced by any term, including other variables and function expressions of arbitrary complexity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
