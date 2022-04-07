@@ -745,23 +745,34 @@ if `x` and `y` is a syntax then `x and y` and `x=>y` and `x or y` and `∀x` and
 >   - Skolemization replaces each existentially quantified variable with a function that returns the appropriate constant *ex: `∀X ∃Y father(X,Y)` become `∀X father(X, f(X))`
 >   - Unification is complicated because a variable may be replaced by any term, including other variables and function expressions of arbitrary complexity
 
+### STRIPS operators consist from:
+- the action description
+- the precondition: it is a conjuction of predicates that must be true before the operator can be applied
+- the effect of an operator: it isa conjuction of predicates that describes how the situation changes when the operator is applied
 
+```
+operator(ACTION: action's name,
+PRECONDITION: p(x) and q(y) and ...
+EFFECT: r(y) and w(x) and ...)
+```
 
+- progression planner: searches forward
+- regression planner: searches backward
 
+plans:
+- pratially ordered plans
+- totally ordered plans
 
+POP algorithm:
+- starts with minimal partial plan
+- extends the plan by achieving a precondition of needed step
+- records a causal link for the newly achieved precondition
+- if the new step threatens an existing causal link or an existing step threatens the new causal link the threat resolving is applied
+- if at any point the algorithm fails to find a relevant operator or resolve a threat it backtracks to previos choice point
 
+execution monitoring: the agent monitors what is happening during the execution of the plan. The agent can do replanning. the execution monitoring agent is deferring the job of dealing with those conditions until they actually arise 
 
-
-
-
-
-
-
-
-
-
-
-
-
+# Intorduction of machine learning
+Learning element is responsible for making imporvements and for efficiency of  the performance element. Performance element is responsible for sleecting exrternal actions. Critic is designed to tell the learning elemeent how well the agent is doing. Problem generator is responsible  for suggesting actions
 
 
