@@ -781,4 +781,15 @@ decision trees are a method for learning boolean functions.
 
 internal nodes response to a test of the value of the attributes
 
+The tree can be expaussed as a confunction of inividual implications to the paths through the tree ending in YES nodes
+
+The decision tree must answer in expressions.
+- the DT can't represent any set - implicity limiter
+- any boolean function can be written in a DT
+
+### construction of a DT
+
+
+
+
 
