@@ -776,3 +776,9 @@ execution monitoring: the agent monitors what is happening during the execution 
 Learning element is responsible for making imporvements and for efficiency of  the performance element. Performance element is responsible for sleecting exrternal actions. Critic is designed to tell the learning elemeent how well the agent is doing. Problem generator is responsible  for suggesting actions
 
 
+## decision tree as performance element
+decision trees are a method for learning boolean functions.
+
+internal nodes response to a test of the value of the attributes
+
+
