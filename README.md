@@ -789,7 +789,70 @@ The decision tree must answer in expressions.
 
 ### construction of a DT
 
+# Machine learning
+## Neural neworks
+- artificial neural network is composed of a number of a sinple arithmetic computing elements or nodes connected by links - synoyms: connectionism, parallel distributed processing, and neural copmutation.
+- mathematical model of operation of brain
+- brains information capacity is thought to emerge primarily from networks of such neurons
 
+### math model of neuron
+![simple neuron ](https://miro.medium.com/max/1400/1*lFoKVLFb7fFbCUiT1GZWmA.png)
+- 1943 McCulloch and Pitts - simple math model of neuron is devised
+- neural network is composed of a number of units connected by links
+- each link has a numeric weight associated with
 
+first linear component called input ifunction: ![in_i=\sum_{j=0}^{n}W_{ji}\cdot a_j](https://latex.codecogs.com/gif.latex?in_i=\sum_{j=0}^{n}W_{ji}\cdot%20a_j) wehere `w0i` connected to fixed input `a0 =-1`
 
+second is a nonliner component called the activation function, g the ttransforms the weighted sum into the final value ![a_i=g(in_i)=g(\sum_{j=0}^{n}W_{ji}\cdot a_j)](https://latex.codecogs.com/gif.latex?a_i=g(in_i)=g(\sum_{j=0}^{n}W_{ji}\cdot%20a_j))
+
+#### activation function 
+- the activation function g is designed to meet two wishes 
+![the treshold function - the sign function - sigmoid function](https://www.researchgate.net/profile/Siddhartha-Bhattacharyya-2/publication/236268473/figure/fig1/AS:669388038471697@1536605953526/Commonly-used-neural-network-activation-functions-a-Binary-threshold-b-Bipolar.ppm)
+
+### network structures
+- feed forward networks 
+- recurrent network - the network structure is cyclic
+  - feeds its outputs back into its own inputs
+  - the activation levels of recurrent networks form a dynamic system that may reach a stable state or exhibit oscillations
+- hopfield network are the best-understood class of recurrent networks
+  - bidirectional connections with symmetric weights
+
+### feed forward neural networks
+- single layered feed-forward neural network
+- with a treshold activation function the percetron represents a boolean function
+- a treshold perceptron returns 1 if and only if the weighted sum of its input is positive ![\sum_{j=0}^{n}W_{j}\cdot a_j)>0](https://latex.codecogs.com/gif.latex?%5Csum_%7Bj%3D0%7D%5E%7Bn%7DW_%7Bj%7D%5Ccdot%20a_j%29%3E0)
+- this eq defines a hyperplane in the input space, perceptron returns 1 if and only if the input is on one side of that hyperplane
+- for this reason the threshold perceptron is called a liner separator
+- the `error = T-O` where `O` is the output of the perceptron on the example and `T`is the true output value.
+  - if the error is positive then `O` must be increased
+  - if error is negative 
+  - the perceptron learning rate is `alpha` and ![W_{j}=W_j+\alpha\cdot I_j\cdot Err](https://latex.codecogs.com/gif.latex?%5Csum_%7Bj%3D0%7D%5E%7Bn%7DW_%7Bj%7D%5Ccdot%20a_j%29%3E0)
+
+### how do networks learn?
+- edible 1
+- not edible 0
+- good fruit 1
+- not good fruit 0
+
+### multilayer network
+back-prpagation learning: at the output layer in weight update rule the activation of the hidden unit `aj` is used instead of the input value: and the rule contains a term for the gradient of the activation function
+
+![W_{ji}=W_{ji}+\alpha\cdot a_j\cdot Err\cdot g'(in_i)](https://latex.codecogs.com/gif.latex?W_%7Bji%7D%3DW_%7Bji%7D&plus;%5Calpha%5Ccdot%20a_j%5Ccdot%20Err%5Ccdot%20g%27%28in_i%29)
+
+where `Erri`is the erro `(Ti-Oi)` at the output node: `g'(ini)` is the derivative of the activation function `g` -> only sigmouid function can e used in multilayer network
+
+new error term is ![deltai](https://latex.codecogs.com/gif.latex?%5CDelta_i) which for output nodes is ![\Delta_i = Err_i\cdot g'(in_i)](https://latex.codecogs.com/gif.latex?%5CDelta_i%20%3D%20Err_i%5Ccdot%20g%27%28in_i%29)
+
+update rule now is the following ![W_{ji}=W_{ji}+\alpha \cdot a_j \cdot \Delta_i](https://latex.codecogs.com/gif.latex?W_%7Bji%7D%3DW_%7Bji%7D&plus;%5Calpha%20%5Ccdot%20a_j%20%5Ccdot%20%5CDelta_i)
+
+repeat this calculation the following for each layer in the network, until the earliest hidden layer is reached: propagate the delta value
+
+1. divide example set
+   - how many units
+   - kind of units
+   - units are connected
+   - initialize the weights
+   - encode the examples in terms of inputs
+2. train model - train the weights
+3. test model
 
