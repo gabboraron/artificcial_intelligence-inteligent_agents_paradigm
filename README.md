@@ -856,3 +856,41 @@ repeat this calculation the following for each layer in the network, until the e
 2. train model - train the weights
 3. test model
 
+## uncertain knowledge and reasoning
+- agents almost never have access to the whole truth about network
+- utility theory is used to represent and reason with prefereneces
+- termutility is used in sense of the quality of being useful
+- every state has a degree of usefulness or utility to an agent and that the agent will preffer states with higher utility
+- the utility of state is realtive o the aent whose preferneces the utility function is supposed to represent
+
+
+### joint pobability
+>
+> ![P(a)=\sum_{e_i=e(a)}P(e_i)](https://latex.codecogs.com/gif.latex?P%28a%29%3D%5Csum_%7Be_i%3De%28a%29%7DP%28e_i%29)
+> 
+> - an atomic snetence is a full specification of the state of the world
+> - values for all variables world cosist of
+> 
+> The probability of both events:
+> ![P(cavity |Toothache) = \frac{P(Cavity \wedge Toothache)}{P(Toothache)}](https://latex.codecogs.com/gif.latex?P%28cavity%20%7CToothache%29%20%3D%20%5Cfrac%7BP%28Cavity%20%5Cwedge%20Toothache%29%7D%7BP%28Toothache%29%7D)
+> 
+> the false version: ![P(\not cavity |Toothache) = \frac{P(\not Cavity \wedge Toothache)}{P(Toothache)}](https://latex.codecogs.com/gif.latex?P%28%5Cnot%20cavity%20%7CToothache%29%20%3D%20%5Cfrac%7BP%28%5Cnot%20Cavity%20%5Cwedge%20Toothache%29%7D%7BP%28Toothache%29%7D)
+> 
+> the multiplication rule: ![P(A\wedge B) = P(A|B)\cdot P(B)](https://latex.codecogs.com/gif.latex?P%28A%5Cwedge%20B%29%20%3D%20P%28A%7CB%29%5Ccdot%20P%28B%29)
+> 
+> #### Belief Bayesian network: a data structure to represent the dependence between variables and to give a concise specification of the joint probability distribution
+> - a set of random variables makes up nodes of the network
+> - set of directed links 
+> 
+> the probability of all events: ![P(x_i,...x_n) = \prod_{i=1}^n{x_i}](https://latex.codecogs.com/gif.latex?P%28x_i%2C...x_n%29%20%3D%20%5Cprod_%7Bi%3D1%7D%5En%7Bx_i%7D)
+> 
+> 
+
+### transtion model
+> used to refer ro the set
+
+
+
+
+
+
